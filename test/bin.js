@@ -81,7 +81,13 @@ describe('Command-line script', function() {
                 runScript(['json/tmp1.json', 'json/tmp2.json', '-i', '-s', '2'], function(code, stdout, stderr) {
                     code.should.equal(0);
                     stdout.should.equal('');
-                    stderr.should.equal('Aligned JSON file: json/tmp1.json\nAligned JSON file: json/tmp2.json\n');
+
+                    // We don't know which of the two files will complete first
+                    try {
+                        stderr.should.equal('Aligned JSON file: json/tmp1.json\nAligned JSON file: json/tmp2.json\n');
+                    } catch (err) {
+                        stderr.should.equal('Aligned JSON file: json/tmp2.json\nAligned JSON file: json/tmp1.json\n');
+                    }
 
                     var contents = fs.readFileSync('json/2s-package.json').toString();
                     fs.readFileSync('json/tmp1.json').toString().should.equal(contents);

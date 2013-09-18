@@ -2,7 +2,7 @@
 	"name"        : "json-align",
 	"author"      : "James Nylen <jnylen@gmail.com>",
 	"description" : "Library and script to pretty-print JSON files with values aligned together.",
-	"version"     : "0.0.4",
+	"version"     : "0.0.5",
 	"repository"  : {
 		"type" : "git",
 		"url"  : "https://github.com/nylen/node-json-align"
