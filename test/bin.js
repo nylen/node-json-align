@@ -25,9 +25,15 @@ function runScript(args, cb) {
         stderr += data.toString();
     });
 
-    proc.on('close', function(code) {
-        cb(code, stdout, stderr);
-    });
+    var done = false;
+    function onExit(code) {
+        if (!done) {
+            cb(code, stdout, stderr);
+            done = true;
+        }
+    }
+
+    proc.on('close', onExit).on('exit', onExit);
 }
 
 function testScriptStdout() {
@@ -60,7 +66,7 @@ describe('Command-line script', function() {
 
     it('should fail for multiple files', function(done) {
         runScript(['json/4s-package.json', 'json/2s-package.json'], function(code, stdout, stderr) {
-            code.should.equal(1);
+            code.should.not.equal(0);
             stdout.should.equal('');
             stderr.should.match(/Error: When aligning more than one JSON file,/);
             done();
@@ -91,7 +97,7 @@ describe('Command-line script', function() {
 
     it('should fail when told to use both tabs and spaces', function(done) {
         runScript(['json/4s-package.json', '-s', '2', '-t'], function(code, stdout, stderr) {
-            code.should.equal(1);
+            code.should.not.equal(0);
             stdout.should.equal('');
             stderr.should.match(/Error: Indent with either tabs or spaces, not both\.\n/);
             done();
