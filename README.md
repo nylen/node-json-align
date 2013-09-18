@@ -1,12 +1,10 @@
-#json-align
+#json-align [![Build Status](https://travis-ci.org/nylen/node-json-align.png?branch=master)](https://travis-ci.org/nylen/node-json-align)
 
 This module provides a function and a command-line script that pretty-print
 JSON strings with consecutive values aligned at the same column for improved
 readability.
 
 Based on [Douglas Crockford's `json2.js`](https://github.com/douglascrockford/JSON-js/blob/master/json2.js).
-
-[![Build Status](https://travis-ci.org/nylen/node-json-align.png?branch=master)](https://travis-ci.org/nylen/node-json-align)
 
 ##Usage
 
