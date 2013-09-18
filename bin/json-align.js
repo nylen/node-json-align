@@ -6,10 +6,10 @@ var crypto  = require('crypto'),
 
 program
     .version(require('../package.json').version)
-    .option('-i, --in-place'    , 'Replace file(s) in place')
-    .option('-s, --spaces [num]', 'Number of spaces to indent by', parseInt)
-    .option('-t, --tabs'        , 'Use tabs to indent')
-    .option('-a, --all-values'  , 'Align all values together')
+    .option('-i, --in-place'    , 'replace file(s) in place')
+    .option('-s, --spaces [num]', 'number of spaces to indent by', parseInt)
+    .option('-t, --tabs'        , 'use tabs to indent')
+    .option('-a, --all-values'  , 'align all values together')
     .parse(process.argv);
 
 JSON.stringifyAligned = require('../index');

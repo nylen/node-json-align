@@ -1,7 +1,8 @@
 #json-align
 
-This module provides a function that pretty-prints JSON strings with
-consecutive values aligned at the same column for improved readability.
+This module provides a function and a command-line script that pretty-print
+JSON strings with consecutive values aligned at the same column for improved
+readability.
 
 Based on [Douglas Crockford's `json2.js`](https://github.com/douglascrockford/JSON-js/blob/master/json2.js).
 
@@ -9,9 +10,16 @@ Based on [Douglas Crockford's `json2.js`](https://github.com/douglascrockford/JS
 
 ##Usage
 
-    npm install json-align
+In code (first do `npm install json-align`):
 
     JSON.stringifyAligned = require('json-align');
+
+On the command line (first do `sudo npm install -g json-align`):
+
+    json-align --help
+
+The command-line script will output to stdout unless the `-i`/`--in-place`
+option is given.
 
 ##Parameters
 
