@@ -15,31 +15,31 @@ function testSameRepr(spaces, val) {
 }
 
 
-suite('Same as JSON.stringify with no indent');
-
-test('Date'    , testSameRepr(new Date()));
-test('Number'  , testSameRepr(44.2));
-test('String'  , testSameRepr('abcd'));
-test('Boolean' , testSameRepr(true));
-test('null'    , testSameRepr(null));
-test('Array[0]', testSameRepr([]));
-test('Array[1]', testSameRepr([123]));
-test('Array[2]', testSameRepr([true, 'abcd']));
-test('Object 1', testSameRepr({}));
-test('Object 2', testSameRepr({a: 1, b: 2}));
-test('Object 3', testSameRepr({a: 1, b: { c: 3, d: 4 }}));
-test('Object 4', testSameRepr({a: [1,2,3], b: 'cde'}));
-test('Object 5', testSameRepr({a: true, b: null, c: ''}));
-
-
-suite('Same as JSON.stringify with indent');
-
-test('Date'    , testSameRepr(4, new Date()));
-test('Number'  , testSameRepr(4, 44.2));
-test('String'  , testSameRepr(4, 'abcd'));
-test('Boolean' , testSameRepr(4, true));
-test('null'    , testSameRepr(4, null));
-test('Array[0]', testSameRepr(4, []));
-test('Array[1]', testSameRepr(4, [123]));
-test('Array[2]', testSameRepr(4, [true, 'abcd']));
-test('Object 1', testSameRepr(4, {}));
+describe('Compared to JSON.stringify', function() {
+    describe('without indentation, it', function() {
+        it('should work the same for a Date'                   , testSameRepr(new Date()));
+        it('should work the same for a Number'                 , testSameRepr(44.2));
+        it('should work the same for a String'                 , testSameRepr('abcd'));
+        it('should work the same for a Boolean'                , testSameRepr(true));
+        it('should work the same for null'                     , testSameRepr(null));
+        it('should work the same for an Array[0]'              , testSameRepr([]));
+        it('should work the same for an Array[1]'              , testSameRepr([123]));
+        it('should work the same for an Array[2]'              , testSameRepr([true, 'abcd']));
+        it('should work the same for an empty object'          , testSameRepr({}));
+        it('should work the same for a simple object'          , testSameRepr({a: 1, b: 2}));
+        it('should work the same for a nested object'          , testSameRepr({a: 1, b: { c: 3, d: 4 }}));
+        it('should work the same for a complex object'         , testSameRepr({a: [1,2,3], b: 'cde'}));
+        it('should work the same for an object containing null', testSameRepr({a: true, b: null, c: ''}));
+    });
+    describe('with indentation, it', function() {
+        it('should work the same for a Date'         , testSameRepr(4, new Date()));
+        it('should work the same for a Number'       , testSameRepr(4, 44.2));
+        it('should work the same for a String'       , testSameRepr(4, 'abcd'));
+        it('should work the same for a Boolean'      , testSameRepr(4, true));
+        it('should work the same for null'           , testSameRepr(4, null));
+        it('should work the same for an Array[0]'    , testSameRepr(4, []));
+        it('should work the same for an Array[1]'    , testSameRepr(4, [123]));
+        it('should work the same for an Array[2]'    , testSameRepr(4, [true, 'abcd']));
+        it('should work the same for an empty object', testSameRepr(4, {}));
+    });
+});
