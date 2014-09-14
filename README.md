@@ -1,4 +1,4 @@
-#json-align [![Build Status](https://travis-ci.org/nylen/node-json-align.png?branch=master)](https://travis-ci.org/nylen/node-json-align)
+#json-align [![Build status](http://img.shields.io/travis/nylen/node-json-align.svg?style=flat)](https://travis-ci.org/nylen/node-json-align) [![npm package](http://img.shields.io/npm/v/json-align.svg?style=flat)](https://www.npmjs.org/package/json-align)
 
 This module provides a function and a command-line script that pretty-print
 JSON strings with consecutive values aligned at the same column for improved
