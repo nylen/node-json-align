@@ -35,7 +35,7 @@ option is given.
 
 ##Examples
 
-```
+```js
 JSON.stringifyAligned({abc: 1, defgh: 2})
 {
     "abc"   : 1,
@@ -43,7 +43,7 @@ JSON.stringifyAligned({abc: 1, defgh: 2})
 }
 ```
 
-```
+```js
 JSON.stringifyAligned({abc: 1, defgh: [2,3,4], ijk: 5})
 {
     "abc"   : 1,
@@ -57,7 +57,7 @@ JSON.stringifyAligned({abc: 1, defgh: [2,3,4], ijk: 5})
 }
 ```
 
-```
+```js
 JSON.stringifyAligned({abc: 1, defgh: [2,3,4], ijk: 5}, null, 2, true)
 {
   "abc"   : 1,
