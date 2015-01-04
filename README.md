@@ -4,6 +4,38 @@ This module provides a function and a command-line script that pretty-print
 JSON strings with consecutive values aligned at the same column for improved
 readability.
 
+Before:
+
+```js
+
+{
+    "name": "json-align",
+    "author": "James Nylen <jnylen@gmail.com>",
+    "description": "Library and script to pretty-print JSON files with values aligned together.",
+    "version": "...",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/nylen/node-json-align"
+    },
+...
+```
+
+After:
+
+```js
+
+{
+    "name"        : "json-align",
+    "author"      : "James Nylen <jnylen@gmail.com>",
+    "description" : "Library and script to pretty-print JSON files with values aligned together.",
+    "version"     : "...",
+    "repository"  : {
+        "type" : "git",
+        "url"  : "https://github.com/nylen/node-json-align"
+    },
+...
+```
+
 Based on [Douglas Crockford's `json2.js`](https://github.com/douglascrockford/JSON-js/blob/master/json2.js).
 
 ##Usage
