@@ -1,4 +1,4 @@
-#json-align [![Build status](http://img.shields.io/travis/nylen/node-json-align.svg?style=flat)](https://travis-ci.org/nylen/node-json-align) [![npm package](http://img.shields.io/npm/v/json-align.svg?style=flat)](https://www.npmjs.org/package/json-align)
+# json-align [![Build status](http://img.shields.io/travis/nylen/node-json-align.svg?style=flat)](https://travis-ci.org/nylen/node-json-align) [![npm package](http://img.shields.io/npm/v/json-align.svg?style=flat)](https://www.npmjs.org/package/json-align)
 
 This module provides a function and a command-line script that pretty-print
 JSON strings with consecutive values aligned at the same column for improved
@@ -38,7 +38,7 @@ After:
 
 Based on [Douglas Crockford's `json2.js`](https://github.com/douglascrockford/JSON-js/blob/master/json2.js).
 
-##Usage
+## Usage
 
 In code (first do `npm install json-align`):
 
@@ -51,7 +51,7 @@ On the command line (first do `sudo npm install -g json-align`):
 The command-line script will output to stdout unless the `-i`/`--in-place`
 option is given.
 
-##Parameters
+## Parameters
 
     JSON.stringifyAligned(obj, [replacer], [spaces], [alignAllValues])
     // or
@@ -65,7 +65,7 @@ option is given.
    time an array or object value is encountered.  If this option is set to
    `true`, then each object will have all of its values aligned together.
 
-##Examples
+## Examples
 
 ```js
 JSON.stringifyAligned({abc: 1, defgh: 2})
